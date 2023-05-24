@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Світлофор</title>
+</head>
+<body>
+<h1>Визначення кольору світлофора</h1>
+<p>Введіть кількість хвилин, щоб дізнатися кольор світлофора:</p>
+<input type="number" id="хвилина" placeholder="Хвилини">
+<button onclick="показатиКольор()">Перевірити</button>
+<p id="результат"></p>
+
+<script>
+    function світлофор(хвилина) {
+        let цикл = хвилина % 5;
+
+        if (цикл < 3) {
+            return "Зелений";
+        } else {
+            return "Червоний";
+        }
+    }
+
+    function показатиКольор() {
+        let введенаХвилина = document.getElementById("хвилина").value;
+        let кольорСвітлофора = світлофор(введенаХвилина);
+        let результатЕлемент = document.getElementById("результат");
+        результатЕлемент.innerHTML = "Зараз горить " + кольорСвітлофора + " сигнал.";
+    }
+</script>
+</body>
+</html>

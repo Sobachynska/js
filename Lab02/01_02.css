@@ -1,0 +1,19 @@
+.content{
+    width: 1000px;
+    background-color: rgb(227, 250, 196);
+    height: 100vh;
+    margin: 0 auto;
+}
+.header{
+    padding-left: 50px;
+    background-color: rgb(100, 100, 245);
+}
+
+.header__title-text{
+    font-size: 25px;
+    margin: 0;
+}
+.header__title-text-one{
+    font-size: 18px;
+    margin: 0;
+}

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Анімація спрайту</title>
+    <style>
+        #canvas {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas width="219" height="230" style="border: 1px solid #ccc;" id="canvas"></canvas>
+
+    <script>
+        function CreateImage() {
+            var cnvs = document.getElementById('canvas');
+            var ctx = cnvs.getContext("2d");
+            var img = new Image(); // створення нового зображення
+
+            img.onload = function () {   // Функція, що викликається при завантаженні img
+                ctx.drawImage(img, 0, 0, 219, 230); // виклик методу для відтворення зображення на полотні зі змінними початковими координатами
+            }
+            img.src = 'cat.jpg'; // шлях до зображення (відносний до HTML-файлу)
+        }
+
+        CreateImage();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Анімація спрайту</title>
+    <style>
+        #canvas {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="canvas" width="140" height="500"></canvas>
+
+    <script>
+        function CreateAnimation() {
+            var cnvs = document.getElementById("canvas");
+            var ctxt = cnvs.getContext("2d");
+            var img = new Image();
+            img.src = "../Lab05/sprite12.png";
+            var frame = 0;
+            function animation() {
+                ctxt.clearRect(0, 0, 140, 500);
+                ctxt.drawImage(img, 140 * frame, 0, 140, 500, 0, 0, 140, 500);
+                if (frame == 3) {
+                    frame = 0;
+                } else {
+                    frame++;
+                }
+                setTimeout(animation, 140);
+            }
+            animation();
+        }
+
+        // Виклик функції для створення анімації
+        CreateAnimation();
+    </script>
+</body>
+
+</html>

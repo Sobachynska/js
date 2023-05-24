@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кількість днів між двома датами</title>
+</head>
+
+<body>
+    <script>
+        function getDaysBetweenDates(date1, date2) {
+            // Розділяємо дати на день, місяць і рік
+            var day1 = parseInt(date1.split('.')[0]);
+            var month1 = parseInt(date1.split('.')[1]);
+            var year1 = parseInt(date1.split('.')[2]);
+
+            var day2 = parseInt(date2.split('.')[0]);
+            var month2 = parseInt(date2.split('.')[1]);
+            var year2 = parseInt(date2.split('.')[2]);
+
+            // Створюємо об'єкти дат
+            var dateObj1 = new Date(year1, month1 - 1, day1);
+            var dateObj2 = new Date(year2, month2 - 1, day2);
+
+            // Визначаємо різницю в мілісекундах
+            var timeDiff = Math.abs(dateObj2.getTime() - dateObj1.getTime());
+
+            // Перетворюємо різницю в дні
+            var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
+
+            return diffDays;
+        }
+
+        // Приклад використання
+        var date1 = '06.05.2023';
+        var date2 = '27.08.2023';
+        var daysBetween = getDaysBetweenDates(date1, date2);
+        document.write('Кількість днів між датами:', daysBetween);
+    </script>
+</body>
+
+</html>
