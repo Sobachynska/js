@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Вікно №2</title>
+    <style>
+        body {
+            background-color: #ff07a0;
+        }
+
+        #content {
+            display: none;
+        }
+    </style>
+    <script>
+        function checkPassword() {
+            var password = prompt("Введіть пароль:");
+            if (password === "fizmat") {
+                document.getElementById('content').style.display = 'block';
+            } else {
+                alert("Невірний пароль!");
+            }
+        }
+    </script>
+</head>
+<body>
+<p>Це вікно №2</p>
+
+<button onclick="checkPassword()">Ввійти</button>
+
+<div id="content">
+    <p>Це вміст документа, доступний після введення пароля.</p>
+</div>
+</body>
+</html>
